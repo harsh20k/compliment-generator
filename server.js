@@ -1,12 +1,13 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const PORT = 3000;
 
-// Load compliments from JSON
+app.use(cors()); // allow all origins
+
 const compliments = require('./compliments.json');
 
 app.get('/compliment', (req, res) => {
-  // Pick a random compliment
   const random = compliments[Math.floor(Math.random() * compliments.length)];
   res.json({ compliment: random });
 });

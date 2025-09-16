@@ -1,17 +1,25 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
 
 function App() {
+  const [compliment, setCompliment] = useState("");
+
+  const getCompliment = async () => {
+    try {
+      const response = await fetch("http://localhost:3000/compliment");
+      const data = await response.json();
+      setCompliment(data.compliment);
+    } catch (error) {
+      console.error("Error fetching compliment:", error);
+    }
+  };
+
   return (
     <div style={{ textAlign: "center", marginTop: "50px" }}>
       <h1>Compliment Generator</h1>
-      <button>Get Compliment</button>
-      <p>Compliment will appear here...</p>
+      <button onClick={getCompliment}>Get Compliment</button>
+      <p>{compliment || "Compliment will appear here..."}</p>
     </div>
   );
 }
 
 export default App;
-
