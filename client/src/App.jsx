@@ -14,9 +14,11 @@ function App() {
   };
 
   return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
+    <div>
       <h1>Compliment Generator</h1>
-      <button onClick={getCompliment}>Get Compliment</button>
+      <button onClick={getCompliment} style={{ margin: "10px", padding: "8px 16px" }}>
+        Get Compliment
+      </button>
       <p>{compliment || "Compliment will appear here..."}</p>
     </div>
   );
