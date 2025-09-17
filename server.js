@@ -12,6 +12,6 @@ app.get('/compliment', (req, res) => {
   res.json({ compliment: random });
 });
 
-app.listen(PORT, () => {
-  console.log(`Hi Harsh your is Server running on http://localhost:${PORT}`);
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`✅ Hi Harsh, Server running on port ${PORT}`);
 });
