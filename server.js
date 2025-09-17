@@ -3,7 +3,6 @@ const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-
 app.use(cors()); // allow all origins
 
 const compliments = require('./compliments.json');
@@ -14,5 +13,5 @@ app.get('/compliment', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Hi Harsh your is Server running on http://localhost:${PORT}`);
 });
